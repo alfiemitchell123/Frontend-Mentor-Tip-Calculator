@@ -1,0 +1,97 @@
+$primary-cyan: hsl(172, 67%, 45%);
+$bg-color: hsl(185, 41%, 84%);
+$very-dark-cyan: hsl(183, 100%, 15%);
+$dark-gray-cyan: hsl(186, 14%, 43%);
+$light-gray-cyan: hsl(185, 41%, 84%);
+$very-light-gray-cyan: hsl(189, 41%, 97%);
+
+$font-path: url("/fonts/Space_Mono/SpaceMonoRegular.ttf");
+
+@font-face {
+    src: url($font-path + "/SpaceMono-Regular.ttf") format("ttf");
+    font-family: "Space Mono";
+    font-weight: regular;
+}
+
+@font-face {
+    src: url($font-path + "/SpaceMono-Bold.ttf") format("ttf");
+
+    font-family: "Space Mono";
+    font-weight: bold;
+}
+
+$space-mono: "Space Mono";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    // box-sizing: border-box;
+    background: $bg-color;
+    font-family: $space-mono;
+}
+
+main {
+    display: grid;
+    min-height: 100vh;
+    grid-auto-rows: auto 1fr auto;
+
+    .container {
+        max-width: 920px;
+        height: 50%;
+        background: white;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border-radius: 30px;
+        padding: 50px;
+        box-shadow: 0px 20px 20px hsla(186, 14%, 43%, 10%);
+
+        .left {
+
+            form {
+                display: grid;
+                grid-template-columns: 100px 100px 100px;
+                grid-gap: 0;
+
+                input[type="radio"] {
+                    visibility: hidden;
+                    height: 0;
+                    width: 0;
+                }
+
+                label {
+                    text-align: center;
+                    cursor: pointer;
+                    background-color: $very-dark-cyan;
+                    color: white;
+                    padding: 10px 10px;
+                    border-radius: 3px;
+                }
+
+                input[type="radio"]:checked+label {
+                    background-color: $primary-cyan;
+                }
+            }
+
+            .span-grey {
+                color: $dark-gray-cyan;
+                display: block;
+            }
+
+            .main-input {
+                width: 20em;
+                height: 2.5em;
+                background-color: $very-light-gray-cyan;
+                border: none;
+                border-radius: 5px;
+                margin-top: 5px;
+            }
+        }
+    }
+}

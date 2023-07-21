@@ -1,3 +1,74 @@
+@font-face {
+  src: url(url("/fonts/Space_Mono/SpaceMonoRegular.ttf")/SpaceMono-Regular.ttf) format("ttf");
+  font-family: "Space Mono";
+  font-weight: regular;
+}
+@font-face {
+  src: url(url("/fonts/Space_Mono/SpaceMonoRegular.ttf")/SpaceMono-Bold.ttf) format("ttf");
+  font-family: "Space Mono";
+  font-weight: bold;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
 
+body {
+  background: hsl(185, 41%, 84%);
+  font-family: "Space Mono";
+}
+
+main {
+  display: grid;
+  min-height: 100vh;
+  grid-auto-rows: auto 1fr auto;
+}
+main .container {
+  max-width: 920px;
+  height: 50%;
+  background: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 30px;
+  padding: 50px;
+  box-shadow: 0px 20px 20px hsla(186, 14%, 43%, 0.1);
+}
+main .container .left form {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-gap: 0;
+}
+main .container .left form input[type=radio] {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
+main .container .left form label {
+  text-align: center;
+  cursor: pointer;
+  background-color: hsl(183, 100%, 15%);
+  color: white;
+  padding: 10px 10px;
+  border-radius: 3px;
+}
+main .container .left form input[type=radio]:checked + label {
+  background-color: hsl(172, 67%, 45%);
+}
+main .container .left .span-grey {
+  color: hsl(186, 14%, 43%);
+  display: block;
+}
+main .container .left .main-input {
+  width: 20em;
+  height: 2.5em;
+  background-color: hsl(189, 41%, 97%);
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+}
 
 /*# sourceMappingURL=output.css.map */
